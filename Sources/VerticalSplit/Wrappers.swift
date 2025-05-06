@@ -71,7 +71,7 @@ struct BottomWrapper<Content: View, Overlay: View>: View {
     let displayCornerRadius = UIScreen.main.displayCornerRadius
     let screenWidth = UIApplication.shared.screenSize.width
     
-    var cornerRadius: CGFloat {
+    // var cornerRadius: CGFloat {
         isFull && !isShowingAccessories ? displayCornerRadius - overscroll * 2 : 22
     }
     
