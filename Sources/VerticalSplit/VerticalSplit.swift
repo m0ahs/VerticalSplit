@@ -316,7 +316,7 @@ public struct VerticalSplit<
             .padding(.horizontal, 12)
             .frame(height: isMinimalPill ? 44 : currentSpacing)
             .frame(maxWidth: isMinimalPill ? nil : .infinity)
-            .background(Capsule().fill(.black))
+            .background(Rectangle().fill(Color.black))
             .offset(
                 y: (hideTop ? -lil + 8 : hideBottom ? lil - 8 - bottomExtraOffset : 0)
                 + (partition + overscroll / (hideTop || hideBottom ? 1 : 5))
