@@ -316,7 +316,15 @@ public struct VerticalSplit<
             .padding(.horizontal, 12)
             .frame(height: isMinimalPill ? 30 : currentSpacing)
             .frame(maxWidth: isMinimalPill ? nil : .infinity)
-            .background(Rectangle().fill(Color.orange))
+            .background(
+                // Utilisation d'un Path personnalisé pour créer une forme qui s'intègre parfaitement
+                Path { path in
+                    // Créer un rectangle sans coins arrondis
+                    let height = isMinimalPill ? 30 : currentSpacing
+                    path.addRect(CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height))
+                }
+                .fill(Color.black)
+            )
             .offset(
                 y: (hideTop ? -lil + 8 : hideBottom ? lil - 8 - bottomExtraOffset : 0)
                 + (partition + overscroll / (hideTop || hideBottom ? 1 : 5))
