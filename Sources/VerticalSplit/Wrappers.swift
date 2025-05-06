@@ -49,7 +49,7 @@ struct TopWrapper<Content: View, Overlay: View>: View {
         .mask { RoundedRectangle(cornerRadius: cornerRadius, style: .continuous) }
         .background {
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                .fill(orange)
+                .fill(bgColor)
                 .padding(.top, -200)
         }
         .offset(y: isShowingAccessories && isFull ? -(spacing * 2 + bottomSafeArea) : 0)
