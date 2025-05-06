@@ -485,7 +485,7 @@ public struct VerticalSplit<
             .allowsHitTesting(false)
             
         }
-        .background(.orange)
+        .background(.black)
         .onAppear {
             didUpdateSplit(split: detent)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
