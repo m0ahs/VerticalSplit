@@ -453,16 +453,17 @@ public struct VerticalSplit<
             .gesture(currentSpacing == spacing ? bossGesture : nil)
             .zIndex(10)
             
-            
+
             ZStack {
-                Capsule()
-                    .fill(.white.opacity(0.3))
-                    .frame(width: 56, height: 5)
+                Rectangle()
+                    .fill(.white.opacity(0.5)) // plus visible et minimal
+                    .frame(width: 40, height: 2) // plus fin
                     .transaction({ t in
                         t.animation = .easeInOut(duration: 0.3)
                     }, body: { $0.scaleEffect(isDragging ? 0.9 : 1) })
-                    .blur(radius: isMinimalPill ? 8 : 0)
+                    .blur(radius: isMinimalPill ? 4 : 0) // optionnel : léger flou en mini
                     .opacity(isMinimalPill ? 0 : 1)
+            
                 Text(isMinimalPill ? (hideTop ? topTitle : bottomTitle) : (topHeight < cardHeight ? topTitle : bottomTitle))
                     .fontWeight(.medium)
                     .fixedSize()
